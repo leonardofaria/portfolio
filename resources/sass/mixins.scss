@@ -1,0 +1,102 @@
+@mixin hide-text{
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+@mixin image-replace($imageURL, $width, $height) {
+  @include hide-text();
+  background: url($imageURL) no-repeat;
+  background-size: $width $height;
+  height: $height;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: $width;
+}
+
+// http://codepen.io/gionkunz/pen/ihgwH
+// Inverts a location so that top gets bottom and left gets right etc.
+@function invert-location($location) {
+  @if $location == left {
+    @return right;
+  }
+  @elseif $location == right {
+    @return left;
+  }
+  @elseif $location == top {
+    @return bottom;
+  }
+  @elseif $location == bottom {
+    @return top;
+  }
+}
+
+// Gets the start position left on horizontal and top on vertical
+@function position-start($location) {
+  @if $location == top or $location == bottom {
+    @return left;
+  }
+  @else {
+    @return top;
+  }
+}
+
+// Gets the end position right on horizontal and bottom on vertical
+@function position-end($location) {
+  @if $location == top or $location == bottom {
+    @return right;
+  }
+  @else {
+    @return bottom;
+  }
+}
+
+// Decides if size needs to be height or width based on horizontal or vertical
+@function size-property($location) {
+  @if $location == top or $location == bottom {
+    @return width;
+  }
+  @else {
+    @return height;
+  }
+}
+
+/*
+   Generates the negative triangle as part of a offset with :before and :after
+
+   $location: Where you want the negative triangle [top, right, bottom, left]
+
+   $position: In percentage where the negative triangle should be placed. With 50% the cut out triangle is in the center.
+
+   $size: How much will the surface be extruded in order to cut out the triangle. Can be any valid size (px, em, rem, % etc.)
+
+   $color: The color of the extruded part where the triangle gets cut out
+*/
+@mixin negative-css-triangle($location: top, $position: 50%, $size: 30px, $height: 30px, $color: black) {
+  &:before, &:after {
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    position: absolute;
+    #{$location}: -($size + $height);
+    border: $size solid transparent;
+    overflow: hidden;
+  }
+
+  &:before {
+    #{position-start($location)}: 0;
+    #{size-property($location)}: $position;
+    border-#{position-start($location)}: none;
+    border-#{invert-location($location)}-color: $color;
+    border-#{invert-location($location)}-width: $height;
+  }
+
+  &:after {
+    #{position-end($location)}: 0;
+    #{size-property($location)}: 100% - $position;
+    border-#{position-end($location)}: none;
+    border-#{invert-location($location)}-color: $color;
+    border-#{invert-location($location)}-width: $height;
+  }
+}

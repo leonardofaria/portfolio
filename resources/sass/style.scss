@@ -1,0 +1,521 @@
+@import "normalize/import-now";
+@import "animate";
+@import "icomoon";
+@import "util";
+@import "mixins";
+@import "grid";
+@import "variables";
+@import "https://fonts.googleapis.com/css?family=Gochi+Hand|Montserrat:400,700|Source+Sans+Pro:400,400i";
+
+body {
+	color: $black;
+	font-family: 'Source Sans Pro', Cambria, Georgia, Times, "Times New Roman", serif;
+}
+
+h1, h2, h3, h4 {
+	font-family: Montserrat, "Helvetica Neue", "Helvetica", sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+h2 {
+	letter-spacing: 3px;
+}
+
+a, a:visited {
+	color: $background2;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+textarea, input {
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  &:focus {
+  	outline: 0;
+  }
+}
+
+ul.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+
+	li {
+		margin: 0;
+		padding: 4px 0;
+		position: relative;
+
+		&:before {
+			width: 9px;
+			height: 9px;
+			border: 3px solid #fff;
+			border-radius: 100px;
+			margin: 9px 0 0 -3px;
+			box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+			background: $darkgray;
+		}
+
+		> span {
+			display: block;
+			padding-left: 20px;
+			text-decoration: none;
+		}
+	}
+
+	&:before, li:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&:before {
+		width: 2px;
+		top: 10px;
+		bottom: 10px;
+		background: $gray;
+	}
+}
+
+/*
+ * Parallax
+ */
+
+.page-header {
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	height: 100vh;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+
+	.page-header-bg {
+		background-size: cover;
+	  background-position: center center;
+	  background-image: url('img/header.jpg');
+		height: 100%;
+		left: 0;
+		text-align: center;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+
+	.page-header-content {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.page-header-clear {
+	height: $intro_height_mobile;
+	position: relative;
+	z-index: -2;
+
+	@media (min-width: 768px) {
+	  height: $intro_height;
+	}
+}
+
+.container {
+	margin: 0 auto;
+
+	@media (min-width: 768px) {
+	  width: 750px;
+	}
+	@media (min-width: 992px) {
+	  width: 970px;
+	}
+	@media (min-width: 1200px) {
+	  width: 1170px;
+	}
+}
+
+a.btn, input.btn {
+	color: $darkgray;
+	display: block;
+	font-size: 0.85rem;
+	font-weight: bold;
+	font-family: Montserrat, sans-serif;
+	margin: 10px auto;
+	width: auto;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+section {
+	margin: 0 auto;
+	padding: 50px 20px 100px;
+	position: relative;
+	z-index: 10;
+
+	@media (min-width: 768px) {
+		padding: 80px 0 160px;
+	}
+
+	&:last-of-type {
+		padding-bottom: 50px;
+
+		@media (min-width: 768px) {
+			padding-bottom: 80px;
+		}
+	}
+
+	h2 {
+		color: $darkgray;
+		margin: 0 auto 40px;
+		padding: 0;
+		text-align: center;
+
+		@media (min-width: 768px) {
+			margin: 0 auto 70px;
+		}
+
+		&:after {
+			background: $gray;
+			content: " ";
+			display: block;
+			height: 2px;
+			margin: 10px auto 0;
+			width: 50px;
+		}
+	}
+
+	h3 {
+		color: $darkgray;
+
+		&.line {
+			margin-bottom: 20px;
+
+			&:after {
+				background: $gray;
+				content: " ";
+				display: block;
+				height: 2px;
+				margin: 10px 0 0;
+				width: 50px;
+			}
+		}
+	}
+
+	.subtitle {
+		font-size: 1.15rem;
+		text-align: center;
+		margin: 0 auto 20px;
+
+		@media (min-width: 768px) {
+			max-width: 550px;
+			margin: 0 auto 90px;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			line-height: 120%;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	p {
+		line-height: 120%;
+	}
+
+	> .container {
+		> .row {
+			> .col-sm-6:last-of-type {
+				margin-top: 50px;
+
+				@media (min-width: 768px) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+#hello {
+	background: transparent;
+	position: relative;
+	text-align: center;
+	height: $intro_height_mobile;
+
+	@media (min-width: 768px) {
+		height: $intro_height;
+	}
+
+	.name-tag {
+	  background: #fff;
+	  border-radius: 10px;
+	  font-family: Helvetica;
+	  height: 180px;
+		left: 50%;
+		margin: -90px 0 0 -150px;
+	  position: absolute;
+	  top: 50%;
+	  width: 300px;
+	  transform: rotate(-3deg);
+
+	  .topbar {
+	    background: #0E9BD6;
+	    text-align: center;
+	    color: #fff;
+	    padding: 5px;
+	    border: 5px solid #fff;
+	    border-top-left-radius: 10px;
+	    border-top-right-radius: 10px;
+
+	    .hello {
+	      font-weight: 600;
+	      font-size: 33px;
+	      letter-spacing: 10px;
+	    }
+
+	    .my-name-is {
+	      font-size: 16px;
+	      font-weight: 200;
+	      letter-spacing: 1px;
+	    }
+	  }
+
+	  .name {
+	  	font: 350%/120% 'Gochi Hand', cursive;
+	  }
+
+	  .underbar {
+	    position: absolute;
+	    bottom: 5px;
+	    left: 5px;
+	    height: 34px;
+	    width: 290px;
+	    top: 140px;
+	    background: #0E9BD6;
+	    border-bottom-left-radius: 6px;
+	    border-bottom-right-radius: 6px;
+	  }
+	}
+}
+
+#about {
+	@extend .bg-white;
+	@include negative-css-triangle(top, 50%, 300px, 70px, $extralight);
+
+	@media (min-width: 768px) {
+		@include negative-css-triangle(top, 50%, 700px, 100px, $extralight);
+	}
+
+	@media (min-width: 992px) {
+		@include negative-css-triangle(top, 50%, 900px, 100px, $extralight);
+	}
+
+	@media (min-width: 1200px) {
+		@include negative-css-triangle(top, 50%, 1200px, 100px, $extralight);
+	}
+
+	ul {
+		li {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+#portfolio {
+	@extend .bg-blue;
+
+	.thumbnail {
+		display: block;
+		margin: 20px 0;
+		overflow: hidden;
+		position: relative;
+		z-index: 10;
+
+		@media (min-width: 768px) {
+			margin: 10px;
+		}
+
+		.overlay {
+			color: $background1;
+			left: 0;
+			min-height: 80px;
+			position: absolute;
+			z-index: 1;
+			text-align: center;
+			transition: min-height 0.3s;
+			width: 100%;
+
+			.description {
+				background-image: url('img/portfolio.png');
+				background-repeat: no-repeat;
+				background-position: bottom center;
+				padding-bottom: 10px;
+
+				.links {
+					text-align: center;
+
+					.btn {
+						display: inline-block;
+						color: $background1;
+						font-family: 'Source Sans Pro', Cambria, Georgia, Times, "Times New Roman", serif;
+						margin: 10px;
+
+						span {
+							font-size: 0.8rem;
+							line-height: 0.8rem;
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+
+			h3 {
+				color: $background2;
+				margin: 0;
+				padding: 15px 10px;
+			}
+
+			.type {
+				display: block;
+				font-size: 0.85rem;
+				font-weight: bold;
+				margin: 0 auto 10px;
+				text-transform: uppercase;
+			}
+
+			.content {
+				color: $background2;
+				transition: all 0.3s;
+				opacity: 0;
+				margin: 0;
+				height: 0;
+				min-height: 0;
+				padding: 0 20px;
+			}
+		}
+
+		img {
+			opacity: 0.5;
+			transition: opacity 0.3s;
+		}
+
+		&:hover {
+			.description {
+				min-height: 280px;
+
+				.content {
+					opacity: 1;
+					padding: 5px 20px 15px;
+					min-height: 100px;
+				}
+			}
+
+			img {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+#misc {
+	@extend .bg-white;
+
+	.btn {
+		margin: 0 auto;
+	}
+
+	.video {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 25px;
+		height: 0;
+
+		iframe, video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+#contact {
+	@extend .bg-blue;
+
+	ul {
+
+		li {
+			margin: 5px 0;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+
+			&:before {
+				display: none;
+			}
+
+			a {
+				color: $extralight;
+				text-decoration: none;
+
+				span {
+					display: inline-block;
+					height: 24px;
+					line-height: 24px;
+					margin-right: 5px;
+					text-align: center;
+					width: 24px;
+				}
+			}
+		}
+	}
+
+	.contact-form {
+		margin-top: 25px;
+
+	  input, textarea {
+	    background: transparent;
+	    border: 0;
+	    border-bottom: 1px solid $extralight;
+	    color: $extralight;
+	    font-size: 1rem;
+	    padding: 0 5px 5px;
+	    margin-bottom: 10px;
+	    width: 100%;
+	  }
+
+	  textarea {
+	  	height: 100px;
+	  	transition: height 0.3s;
+	  	width: 100%;
+	  }
+
+	  .btn {
+	  	background: transparent;
+	  	border: 0;
+	  	font-size: 0.85rem;
+	  	font-weight: bold;
+	  	width: 30%;
+	  }
+
+	  .response {
+	  	color: $light;
+	  	text-align: center;
+	  }
+	}
+}

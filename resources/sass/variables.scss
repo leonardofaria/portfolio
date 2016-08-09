@@ -1,0 +1,36 @@
+$header_height: 80px;
+$header_height_mobile: 60px;
+$menu_width: 25px;
+$intro_height: 100vh;
+$intro_height_mobile: 100vh;
+
+// color scheme: http://www.colourlovers.com/palette/2029824/D%C3%B6viz
+$extralight: #F9FAFB;
+$light: #ECEFF2;
+$gray: #869DAE;
+$darkgray: #53626C;
+$black: #58595b;
+$background1: #005C97;
+$background2: #363795;
+
+.bg-blue {
+	background: $background1;
+	background: linear-gradient(to bottom, $background1 , $background2);
+
+	h2 {
+		color: $light;
+
+		&:before {
+			background: $extralight;
+		}
+	}
+
+	h3 {
+		color: $light;
+	}
+}
+
+.bg-white {
+	background: #fff;
+	background: linear-gradient(to bottom, $extralight, #fff);
+}
