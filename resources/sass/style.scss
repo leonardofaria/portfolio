@@ -40,49 +40,6 @@ textarea, input {
   }
 }
 
-ul.list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
-
-	li {
-		margin: 0;
-		padding: 4px 0;
-		position: relative;
-
-		&:before {
-			width: 9px;
-			height: 9px;
-			border: 3px solid #fff;
-			border-radius: 100px;
-			margin: 9px 0 0 -3px;
-			box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-			background: $darkgray;
-		}
-
-		> span {
-			display: block;
-			padding-left: 20px;
-			text-decoration: none;
-		}
-	}
-
-	&:before, li:before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	&:before {
-		width: 2px;
-		top: 10px;
-		bottom: 10px;
-		background: $gray;
-	}
-}
-
 /*
  * Parallax
  */
@@ -229,6 +186,11 @@ section {
 			line-height: 120%;
 			margin: 0;
 			padding: 0;
+
+			ul {
+				margin: 5px 0 1em 15px;
+				list-style: circle;
+			}
 		}
 	}
 
@@ -414,7 +376,7 @@ section {
 
 		&:hover {
 			.description {
-				min-height: 280px;
+				min-height: 380px;
 
 				.content {
 					opacity: 1;
@@ -438,10 +400,10 @@ section {
 	}
 
 	.video {
+		height: 0;
+		margin-bottom: 1em;
 		position: relative;
 		padding-bottom: 56.25%;
-		padding-top: 25px;
-		height: 0;
 
 		iframe, video {
 			position: absolute;

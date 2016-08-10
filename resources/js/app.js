@@ -50,4 +50,11 @@ document.addEventListener("DOMContentLoaded", function() {
     request.send(data);
   });
 
+
+  var video = document.querySelector('.video');
+  var github = document.querySelector('.github');
+
+  if (video.offsetHeight > github.offsetHeight) {
+    github.style.minHeight = video.offsetHeight + 'px';
+  }
 });

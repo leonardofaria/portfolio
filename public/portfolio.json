@@ -137,7 +137,14 @@
 			"title": "envirosax",
 			"type": "ruby on rails app",
 			"thumb": "envirosax.jpg",
-			"description": "envirosax is a B2B website to sell bags."
+			"description": "envirosax is a B2B website to sell bags.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "https://www.youtube.com/watch?v=Ymh1VRPEJm0",
+					"description": "Demo (video)"
+				}
+			]
 		}
 	]
 }
