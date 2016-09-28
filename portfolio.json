@@ -1,0 +1,163 @@
+{
+	"portfolio":
+	[
+		{
+			"title": "Dynamic Leap",
+			"type": "wordpress",
+			"thumb": "dynamicleap.jpg",
+			"description": "Dynamic Leap is a custom software development shop and it builds amazing mobile experiences. I have coded the current website.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "https://www.dynamic-leap.com/",
+					"description": "Visit"
+				}
+			]
+		},
+		{
+			"title": "ShareSmart",
+			"type": "wordpress",
+			"thumb": "sharesmart.jpg",
+			"description": "ShareSmart represents the mobile healthcare revolution. I have coded the product website in Dynamic Leap.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "http://sharesmart.ca/",
+					"description": "Visit"
+				}
+			]
+		},
+		{
+			"title": "Langara eSports",
+			"type": "laravel app",
+			"thumb": "langaraesports.jpg",
+			"description": "Members of Langara eSports Club can create profile pages, show their favourite games and create events to play games together online.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "http://langaraesports.herokuapp.com/",
+					"description": "Visit"
+				},
+				{
+					"type": "github",
+					"url": "https://github.com/leonardofaria/langara-esports",
+					"description": "Source code"
+				}
+			]
+		},
+		{
+			"title": "Vertuity",
+			"type": "wordpress",
+			"thumb": "vertuity.jpg",
+			"description": "Vertuity is a mortgage company from Winnipeg. I have coded the Wordpress template when I worked at 604media.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "http://vertuity.ca/",
+					"description": "Visit"
+				}
+			]
+		},
+		{
+			"title": "MVB",
+			"type": "ruby on rails app",
+			"thumb": "mvb.jpg",
+			"description": "MVB is a B2B website to connect stores and clothes factories. It was used by 40 factories during an specific event."
+		},
+		{
+			"title": "writing for ielts and toefl",
+			"type": "ios & android app",
+			"thumb": "writing-skills.jpg",
+			"description": "This app helps students to prepare for IELTS/TOEFL exams.",
+			"links": [
+				{
+					"type": "apple",
+					"url": "https://itunes.apple.com/us/app/writing-skills-for-ielts-toefl/id1000191077?ls=1&mt=8",
+					"description": "App Store"
+				},
+				{
+					"type": "android",
+					"url": "https://play.google.com/store/apps/details?id=net.leonardofaria.writingskills",
+					"description": "Google Play"
+				}
+
+			]
+		},
+		{
+			"title": "codestacker",
+			"type": "ruby on rails app",
+			"thumb": "codestacker.jpg",
+			"description": "codestacker is a community to share snippets. This was my first Rails project and the source code is available in Github.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "http://codestacker.com/",
+					"description": "Visit"
+				},
+				{
+					"type": "github",
+					"url": "https://github.com/leonardofaria/codestacker",
+					"description": "Source code"
+				}
+			]
+		},
+		{
+			"title": "e-recursos",
+			"type": "ios & android app",
+			"thumb": "erecursos.jpg",
+			"description": "This app accesses a Brazilian Social Security application which citizen use for getting information about their rights."
+		},
+		{
+			"title": "previdência social",
+			"type": "wordpress",
+			"thumb": "previdencia.jpg",
+			"description": "Previdência Social is the official Brazilian Social Security portal. I migrated an old website (+20.000 posts and +2.000 pages) to a new structure using Wordpress.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "http://previdencia.gov.br",
+					"description": "Visit"
+				}
+			]
+		},
+		{
+			"title": "autosimulado",
+			"type": "ruby on rails app",
+			"thumb": "autosimulado.jpg",
+			"description": "autosimulado is a website started in my college to help my girlfriend to learn traffic rules. More than 40.000 people have already used this service.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "http://autosimulado.com.br",
+					"description": "Visit"
+				}
+			]
+		},
+		{
+			"title": "supertestes",
+			"type": "ruby on rails app",
+			"thumb": "supertestes.jpg",
+			"description": "supertestes is a website to help people to practice for entrance exams.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "http://supertestes.gov.br",
+					"description": "Visit"
+				}
+			]
+		},
+		{
+			"title": "envirosax",
+			"type": "ruby on rails app",
+			"thumb": "envirosax.jpg",
+			"description": "envirosax is a B2B website to sell bags.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "https://www.youtube.com/watch?v=Ymh1VRPEJm0",
+					"description": "Demo (video)"
+				}
+			]
+		}
+	]
+}
