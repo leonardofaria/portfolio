@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   xhr.onload = function() {
     if (xhr.status === 200) {
       var data = JSON.parse(xhr.responseText);
-      var holder = document.querySelector("#portfolio .row");
+      var holder = document.querySelector("#portfolio .holder");
 
       data.portfolio.forEach(function(value, index) {
         var delay = (index + 1) / 10;
@@ -23,33 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
           description += '</div>';
         }
 
-        var portfolio = '<div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-offset="20" data-wow-delay="' + delay + 's"><div class="thumbnail"><div class="overlay"><div class="description"><h3>' + value.title + '</h3><div class="type">'+ value.type + '</div><div class="content">' + description + '</div></div></div><img src="img/portfolio/' + value.thumb + '" /></div></div>';
+        var portfolio = '<div class="row wow fadeInUp" data-wow-offset="20" data-wow-delay="' + delay + 's"><div class="col-sm-4 col-sm-offset-1"><img src="img/portfolio/' + value.thumb + '" /></div><div class="col-sm-5"><h3>' + value.title + '</h3><div class="type">'+ value.type + '</div><div class="content">' + description + '</div></div></div>';
 
         holder.innerHTML += portfolio;
       });
     }
   };
   xhr.send();
-
-  document.querySelector('.contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var form = e.target;
-    var data = new FormData(form);
-    var request = new XMLHttpRequest();
-    var response = document.querySelector(".response");
-
-    response.innerText = 'Sending...';
-
-    request.onreadystatechange = function() {
-      response.innerText = 'Thanks for your message';
-    };
-
-    request.open(form.method, form.action);
-    request.setRequestHeader('Accept', 'application/json');
-    request.send(data);
-  });
-
 
   var video = document.querySelector('.video');
   var github = document.querySelector('.github');

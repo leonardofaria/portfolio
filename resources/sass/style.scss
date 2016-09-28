@@ -297,95 +297,48 @@ section {
 
 #portfolio {
 	@extend .bg-blue;
+	color: $light;
 
-	.thumbnail {
-		display: block;
-		margin: 20px 0;
-		overflow: hidden;
-		position: relative;
-		z-index: 10;
+	.row {
+		margin: 25px -15px;
 
-		@media (min-width: 768px) {
-			margin: 10px;
+		h3 {
+			margin: 0;
+			padding: 15px 0;
 		}
 
-		.overlay {
-			color: $background1;
-			left: 0;
-			min-height: 80px;
-			position: absolute;
-			z-index: 1;
-			text-align: center;
-			transition: min-height 0.3s;
-			width: 100%;
+		.type {
+			color: $gray;
+			display: block;
+			font-size: 0.85rem;
+			font-weight: bold;
+			margin: 0;
+			text-transform: uppercase;
+		}
 
-			.description {
-				background-image: url('img/portfolio.png');
-				background-repeat: no-repeat;
-				background-position: bottom center;
-				padding-bottom: 10px;
+		.content {
+			margin: 0;
+			padding: 10px 0;
+		}
 
-				.links {
-					text-align: center;
+		.links {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 10px 0;
 
-					.btn {
-						display: inline-block;
-						color: $background1;
-						font-family: 'Source Sans Pro', Cambria, Georgia, Times, "Times New Roman", serif;
-						margin: 10px;
+			.btn {
+				display: inline-block;
+				color: $light;
+				font-family: 'Source Sans Pro', Cambria, Georgia, Times, "Times New Roman", serif;
+				margin: 5px 0;
+				text-align: center;
 
-						span {
-							font-size: 0.8rem;
-							line-height: 0.8rem;
-							margin-right: 5px;
-						}
-					}
+				span {
+					font-size: 0.8rem;
+					line-height: 0.8rem;
+					margin-right: 5px;
 				}
-			}
-
-			h3 {
-				color: $background2;
-				margin: 0;
-				padding: 15px 10px;
-			}
-
-			.type {
-				display: block;
-				font-size: 0.85rem;
-				font-weight: bold;
-				margin: 0 auto 10px;
-				text-transform: uppercase;
-			}
-
-			.content {
-				color: $background2;
-				transition: all 0.3s;
-				opacity: 0;
-				margin: 0;
-				height: 0;
-				min-height: 0;
-				padding: 0 20px;
-			}
-		}
-
-		img {
-			opacity: 0.5;
-			transition: opacity 0.3s;
-		}
-
-		&:hover {
-			.description {
-				min-height: 380px;
-
-				.content {
-					opacity: 1;
-					padding: 5px 20px 15px;
-					min-height: 100px;
-				}
-			}
-
-			img {
-				opacity: 1;
 			}
 		}
 	}
@@ -416,6 +369,11 @@ section {
 
 #contact {
 	@extend .bg-blue;
+
+	.list {
+		display: table;
+		margin: 0 auto;
+	}
 
 	ul {
 
@@ -478,5 +436,14 @@ section {
 	  	color: $light;
 	  	text-align: center;
 	  }
+	}
+}
+
+@keyframes placeHolderShimmer{
+	0%{
+		background-position: -468px 0
+	}
+	100%{
+		background-position: 468px 0
 	}
 }
