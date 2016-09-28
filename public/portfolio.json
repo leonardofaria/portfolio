@@ -2,6 +2,19 @@
 	"portfolio":
 	[
 		{
+			"title": "Dynamic Leap",
+			"type": "wordpress",
+			"thumb": "dynamicleap.jpg",
+			"description": "Dynamic Leap is a custom software development shop and it builds amazing mobile experiences. I have coded the current website.",
+			"links": [
+				{
+					"type": "external-link",
+					"url": "https://www.dynamic-leap.com/",
+					"description": "Visit"
+				}
+			]
+		},
+		{
 			"title": "ShareSmart",
 			"type": "wordpress",
 			"thumb": "sharesmart.jpg",
